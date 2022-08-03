@@ -1,3 +1,4 @@
+/**************************************/
 function show(element) {
   element.classList.remove('hide')
 }
@@ -12,6 +13,9 @@ function active(element) {
 function inactive(elements) {
   elements.forEach((element) => element.classList.remove('active'))
 }
+/**************************************/
+
+
 
 
 export { show, hide, active, inactive }

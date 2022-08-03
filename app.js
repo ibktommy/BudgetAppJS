@@ -15,8 +15,6 @@ const incomeBtn = document.querySelector('.tab2')
 const expenseBtn = document.querySelector('.tab1')
 const allBtn = document.querySelector('.tab3')
 
-console.log(allList, allBtn)
-
 // INPUT BUTTONS
 const addIncome = document.querySelector('.add-income')
 const incomeTitle = document.querySelector('#income-title-input')
@@ -31,6 +29,8 @@ const expenseAmount = document.querySelector('#expense-amount-input')
 let ENTRY_LIST = []
 let [balance, income, outcome] = [0,0,0]
 let [deleteIcon, editIcon] = ['fas fa-trash', 'far fa-edit']
+
+/**********************************/
 
 /* IMPORT MINI-FUNCTIONS - DISPLAY_FUNCTIONS */
 import { show, hide, active, inactive } from './miniFunctions.js'
@@ -56,4 +56,38 @@ allBtn.addEventListener('click', function () {
   active(allBtn)
   inactive([incomeBtn, expenseBtn])
 })
+
+/**********************************/
+
+// Add-Expense Event Listener
+addExpense.addEventListener('click', budgetOut)
+
+// Add-Income Event Listener
+// addIncome.addEventListener('click', budgetIn)
+
+// Add-Income & Add-Expense Enter Key Event Listener
+document.addEventListener('keypress', function (e) {
+  if (e.key !== 'Enter') return;
+
+  budgetOut(e)
+})
+
+// Budget Out Function
+function budgetOut(e) {
+  e.preventDefault()
+
+  if (!expenseTitle.value || !expenseAmount.value) return
+
+  let expense = {
+    type: 'expense',
+    title: 'expenseTitle.value',
+    amount: parseFloat(expenseAmount.value)
+  }
+
+  ENTRY_LIST.push(expense)
+  console.log(expense)
+}
+
+
+
 
