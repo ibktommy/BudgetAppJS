@@ -16,6 +16,4 @@ function inactive(elements) {
 /**************************************/
 
 
-
-
 export { show, hide, active, inactive }

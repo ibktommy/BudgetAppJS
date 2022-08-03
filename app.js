@@ -58,7 +58,6 @@ allBtn.addEventListener('click', function () {
 })
 
 /**********************************/
-
 // Add-Expense Event Listener
 addExpense.addEventListener('click', budgetOut)
 
@@ -86,6 +85,7 @@ function budgetOut(e) {
 
   ENTRY_LIST.push(expense)
   console.log(expense)
+  console.log(ENTRY_LIST)
 }
 
 
