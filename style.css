@@ -52,7 +52,7 @@ h1 {
 }
 
 .balance .value p {
-  font-size: 40px;
+  font-size: 50px;
   color: rgb(248, 182, 0);
 }
 
@@ -205,7 +205,3 @@ input[type="submit"] {
 .action i:last-child {
   margin-left: 10px;
 }
-
-/* canvas {
-  border: 1px white solid;
-} */
