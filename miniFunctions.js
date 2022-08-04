@@ -17,6 +17,19 @@ function inactive(elements) {
 function clearInputs(inputs) {
   inputs.forEach((input) => input.value = '')
 }
+function calculateBalance(income, outcome) {
+  return income - outcome
+}
+function calculateTotal(type, list) {
+  let sum = 0
+  list.forEach((entry) => {
+    if (entry.type === type) {
+      sum += entry.amount
+    }
+  })
+  return sum
+}
 
 
-export { show, hide, active, inactive, clearInputs }
+export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal }
+

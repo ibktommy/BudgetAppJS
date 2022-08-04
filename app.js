@@ -27,7 +27,7 @@ const expenseAmount = document.querySelector('#expense-amount-input')
 
 // NECESSARY VARIABLES
 let ENTRY_LIST = []
-let [balance, income, outcome] = [0,0,0]
+let [balance, income, outcome] = [0, 0, 0]
 let [deleteIcon, editIcon] = ['fas fa-trash', 'far fa-edit']
 
 /**********************************/
@@ -59,7 +59,7 @@ allBtn.addEventListener('click', function () {
 
 /**********************************/
 // IMPORTING FUNCTIONS
-import { clearInputs } from './miniFunctions.js'
+import { clearInputs, calculateBalance, calculateTotal } from './miniFunctions.js'
 
 // Add-Income & Add-Expense Enter Key Event Listener
 document.addEventListener('keypress', function (e) {
@@ -84,7 +84,9 @@ function budgetOut(e) {
   }
 
   ENTRY_LIST.push(expense)
-  // console.log(ENTRY_LIST)
+
+  // Updating the UI after submitting the values
+  updateUI()
 
   clearInputs([expenseTitle, expenseAmount])
 }
@@ -105,9 +107,21 @@ function budgetIn(e) {
   }
 
   ENTRY_LIST.push(income)
-  // console.log(ENTRY_LIST)
 
+  // Updating the UI after submitting the values
+  updateUI()
+
+  // Clear Input Fields after submitting values
   clearInputs([incomeTitle, incomeAmount])
+}
+
+// Function to update the UI
+const updateUI = () => {
+  income = calculateTotal('income', ENTRY_LIST)
+  outcome = calculateTotal('expense', ENTRY_LIST)
+  balance = calculateBalance(income, outcome)
+
+  console.log([balance, income, outcome])
 }
 
 
