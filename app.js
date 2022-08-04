@@ -58,11 +58,6 @@ allBtn.addEventListener('click', function () {
 })
 
 /**********************************/
-// Add-Expense Event Listener
-addExpense.addEventListener('click', budgetOut)
-
-// Add-Income Event Listener
-// addIncome.addEventListener('click', budgetIn)
 
 // Add-Income & Add-Expense Enter Key Event Listener
 document.addEventListener('keypress', function (e) {
@@ -70,6 +65,9 @@ document.addEventListener('keypress', function (e) {
 
   budgetOut(e)
 })
+
+// Add-Expense Event Listener
+addExpense.addEventListener('click', budgetOut)
 
 // Budget Out Function
 function budgetOut(e) {
@@ -85,6 +83,25 @@ function budgetOut(e) {
 
   ENTRY_LIST.push(expense)
   console.log(expense)
+  console.log(ENTRY_LIST)
+}
+
+// Add-Income Event Listener
+addIncome.addEventListener('click', budgetIn)
+
+// Budget In Function
+function budgetIn(e) {
+  e.preventDefault()
+
+  if (!incomeTitle.value || !incomeAmount.value) return
+
+  let income = {
+    type: 'income',
+    title: 'incomeTitle.value',
+    amount: parseFloat(incomeAmount.value)
+  }
+
+  ENTRY_LIST.push(income)
   console.log(ENTRY_LIST)
 }
 
