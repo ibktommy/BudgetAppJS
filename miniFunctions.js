@@ -14,6 +14,9 @@ function inactive(elements) {
   elements.forEach((element) => element.classList.remove('active'))
 }
 /**************************************/
+function clearInputs(inputs) {
+  inputs.forEach((input) => input.value = '')
+}
 
 
-export { show, hide, active, inactive }
+export { show, hide, active, inactive, clearInputs }

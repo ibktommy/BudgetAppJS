@@ -58,6 +58,8 @@ allBtn.addEventListener('click', function () {
 })
 
 /**********************************/
+// IMPORTING FUNCTIONS
+import { clearInputs } from './miniFunctions.js'
 
 // Add-Income & Add-Expense Enter Key Event Listener
 document.addEventListener('keypress', function (e) {
@@ -82,8 +84,9 @@ function budgetOut(e) {
   }
 
   ENTRY_LIST.push(expense)
-  console.log(expense)
-  console.log(ENTRY_LIST)
+  // console.log(ENTRY_LIST)
+
+  clearInputs([expenseTitle, expenseAmount])
 }
 
 // Add-Income Event Listener
@@ -102,7 +105,9 @@ function budgetIn(e) {
   }
 
   ENTRY_LIST.push(income)
-  console.log(ENTRY_LIST)
+  // console.log(ENTRY_LIST)
+
+  clearInputs([incomeTitle, incomeAmount])
 }
 
 
