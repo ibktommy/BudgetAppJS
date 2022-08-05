@@ -1,4 +1,4 @@
-const balanceEl = document.querySelector('.balane .value')
+const balanceEl = document.querySelector('.balance .value')
 const incomeTotalEl = document.querySelector('.income-total')
 const outcomeTotalEl = document.querySelector('.outcome-total')
 const incomeEl = document.querySelector('#income-tracker')
@@ -68,29 +68,6 @@ document.addEventListener('keypress', function (e) {
   budgetOut(e)
 })
 
-// Add-Expense Event Listener
-addExpense.addEventListener('click', budgetOut)
-
-// Budget Out Function
-function budgetOut(e) {
-  e.preventDefault()
-
-  if (!expenseTitle.value || !expenseAmount.value) return
-
-  let expense = {
-    type: 'expense',
-    title: 'expenseTitle.value',
-    amount: parseFloat(expenseAmount.value)
-  }
-
-  ENTRY_LIST.push(expense)
-
-  // Updating the UI after submitting the values
-  updateUI()
-
-  clearInputs([expenseTitle, expenseAmount])
-}
-
 // Add-Income Event Listener
 addIncome.addEventListener('click', budgetIn)
 
@@ -115,13 +92,42 @@ function budgetIn(e) {
   clearInputs([incomeTitle, incomeAmount])
 }
 
+// Add-Expense Event Listener
+addExpense.addEventListener('click', budgetOut)
+
+// Budget Out Function
+function budgetOut(e) {
+  e.preventDefault()
+
+  if (!expenseTitle.value || !expenseAmount.value) return
+
+  let expense = {
+    type: 'expense',
+    title: 'expenseTitle.value',
+    amount: parseFloat(expenseAmount.value)
+  }
+
+  ENTRY_LIST.push(expense)
+
+  // Updating the UI after submitting the values
+  updateUI()
+
+  clearInputs([expenseTitle, expenseAmount])
+}
+
 // Function to update the UI
 const updateUI = () => {
   income = calculateTotal('income', ENTRY_LIST)
   outcome = calculateTotal('expense', ENTRY_LIST)
   balance = calculateBalance(income, outcome)
 
-  console.log([balance, income, outcome])
+  // Creating Variable to check for the num-comparison of the inputs
+  let sign = income >= outcome ? '$' : "-$"
+
+  // Getting the income, outcome and balance value to be displayed In the App UI
+  balanceEl.innerHTML = `<p>${sign}${balance}</p>`
+  incomeTotalEl.innerHTML = `<p>$${income}</p>`
+  outcomeTotalEl.innerHTML = `<p>-$${outcome}</p>`
 }
 
 
