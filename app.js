@@ -66,6 +66,7 @@ document.addEventListener('keypress', function (e) {
   if (e.key !== 'Enter') return;
 
   budgetOut(e)
+  budgetIn(e)
 })
 
 // Add-Income Event Listener
