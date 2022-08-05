@@ -120,7 +120,7 @@ function budgetOut(e) {
 const updateUI = () => {
   income = calculateTotal('income', ENTRY_LIST)
   outcome = calculateTotal('expense', ENTRY_LIST)
-  balance = calculateBalance(income, outcome)
+  balance = Math.abs(calculateBalance(income, outcome))
 
   // Creating Variable to check for the num-comparison of the inputs
   let sign = income >= outcome ? '$' : "-$"
@@ -130,7 +130,3 @@ const updateUI = () => {
   incomeTotalEl.innerHTML = `<p>$${income.toLocaleString()}</p>`
   outcomeTotalEl.innerHTML = `<p>-$${outcome.toLocaleString()}</p>`
 }
-
-
-
-
