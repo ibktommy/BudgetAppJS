@@ -52,7 +52,8 @@ h1 {
 }
 
 .balance .value p {
-  font-size: 50px;
+  font-size: 60px;
+  font-weight: bold;
   color: rgb(248, 182, 0);
 }
 
