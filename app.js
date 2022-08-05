@@ -125,9 +125,9 @@ const updateUI = () => {
   let sign = income >= outcome ? '$' : "-$"
 
   // Getting the income, outcome and balance value to be displayed In the App UI
-  balanceEl.innerHTML = `<p>${sign}${balance}</p>`
-  incomeTotalEl.innerHTML = `<p>$${income}</p>`
-  outcomeTotalEl.innerHTML = `<p>-$${outcome}</p>`
+  balanceEl.innerHTML = `<p>${sign}${balance.toLocaleString()}</p>`
+  incomeTotalEl.innerHTML = `<p>$${income.toLocaleString()}</p>`
+  outcomeTotalEl.innerHTML = `<p>-$${outcome.toLocaleString()}</p>`
 }
 
 
