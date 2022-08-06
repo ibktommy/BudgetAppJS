@@ -154,6 +154,7 @@ function updateUI() {
 }
 
 /**********************************/
+
 // LIST EVENT LISTENER
 lists.forEach((list) => {
   list.addEventListener('click', (e) => {
@@ -164,6 +165,15 @@ lists.forEach((list) => {
     let targetID = entry.attributes.id.value
 
     console.log(targetBtn, targetID, entry)
+
+    if (targetBtn === editIcon) {
+      console.log("Edit");
+      // editListItem()
+    } else if (targetBtn === deleteIcon) {
+      console.log("Delete")
+      // deleteListItem()
+    }
   })
 })
+
 /**********************************/
