@@ -152,3 +152,18 @@ function updateUI() {
   // Save ENTRY_LIST to local Storage
   localStorage.setItem('EntryList', JSON.stringify(ENTRY_LIST))
 }
+
+/**********************************/
+// LIST EVENT LISTENER
+lists.forEach((list) => {
+  list.addEventListener('click', (e) => {
+    if (e.target.localName !== 'i') return
+
+    let targetBtn = e.target.attributes.class.value
+    let entry = e.target.parentNode.parentNode
+    let targetID = entry.attributes.id.value
+
+    console.log(targetBtn, targetID, entry)
+  })
+})
+/**********************************/
