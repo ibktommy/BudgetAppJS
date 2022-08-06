@@ -63,7 +63,7 @@ allBtn.addEventListener('click', function () {
 
 /**********************************/
 // IMPORTING FUNCTIONS
-import { clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList } from './miniFunctions.js'
+import { clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList, deleteListsItem } from './miniFunctions.js'
 
 // Add-Income & Add-Expense Enter Key Event Listener
 document.addEventListener('keypress', function (e) {
@@ -170,8 +170,8 @@ lists.forEach((list) => {
       console.log("Edit");
       // editListItem()
     } else if (targetBtn === deleteIcon) {
-      console.log("Delete")
-      // deleteListItem()
+      // console.log("Delete")
+      deleteListsItem(targetID, ENTRY_LIST, updateUI)
     }
   })
 })

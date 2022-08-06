@@ -52,5 +52,11 @@ const showEntry = (list, type, title, amount, id) => {
   list.insertAdjacentHTML(position, entry)
 }
 
-export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList }
+// Function to Delete A List Item 
+function deleteListsItem(id, entryList, UI) {
+  entryList.splice(id, 1)
+  UI()
+}
+
+export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList, deleteListsItem }
 
