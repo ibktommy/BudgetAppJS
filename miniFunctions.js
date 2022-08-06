@@ -29,6 +29,14 @@ function calculateTotal(type, list) {
   })
   return sum
 }
+
+// Function to Clear ENTRY_LIST so that we dont have repetition of list-items unnecessarily
+const clearElementList = (elements) => {
+  elements.forEach((element) => {
+    element.innerHTML = ''
+  })
+}
+
 // Function to Display the ENTRY_LIST as a list Item in the App
 const showEntry = (list, type, title, amount, id) => {
   const entry = `
@@ -44,6 +52,5 @@ const showEntry = (list, type, title, amount, id) => {
   list.insertAdjacentHTML(position, entry)
 }
 
-
-export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal, showEntry }
+export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList }
 

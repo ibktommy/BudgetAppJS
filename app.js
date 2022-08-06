@@ -59,7 +59,7 @@ allBtn.addEventListener('click', function () {
 
 /**********************************/
 // IMPORTING FUNCTIONS
-import { clearInputs, calculateBalance, calculateTotal, showEntry } from './miniFunctions.js'
+import { clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList } from './miniFunctions.js'
 
 // Add-Income & Add-Expense Enter Key Event Listener
 document.addEventListener('keypress', function (e) {
@@ -131,6 +131,8 @@ const updateUI = () => {
   balanceEl.innerHTML = `<p>${sign}${balance.toLocaleString()}</p>`
   incomeTotalEl.innerHTML = `<p>$${income.toLocaleString()}</p>`
   outcomeTotalEl.innerHTML = `<p>-$${outcome.toLocaleString()}</p>`
+
+  clearElementList([incomeList, expenseList, allList])
 
   ENTRY_LIST.forEach((entry, index) => {
     if (entry.type === 'income') {
