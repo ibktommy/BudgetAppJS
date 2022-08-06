@@ -85,6 +85,7 @@ function budgetIn(e) {
   }
 
   ENTRY_LIST.push(income)
+  // console.log(ENTRY_LIST)
 
   // Updating the UI after submitting the values
   updateUI()
@@ -109,6 +110,7 @@ function budgetOut(e) {
   }
 
   ENTRY_LIST.push(expense)
+  // console.log(ENTRY_LIST)
 
   // Updating the UI after submitting the values
   updateUI()
@@ -138,4 +140,6 @@ const updateUI = () => {
     }
     showEntry(allList, entry.type, entry.title, entry.amount, index)
   })
+
+  updateChart(income, outcome)
 }

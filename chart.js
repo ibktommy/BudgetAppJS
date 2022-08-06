@@ -20,5 +20,11 @@ function drawCircle(color, ratio, anticlockwise) {
   context2D.stroke()
 }
 
-drawCircle('red', 0.25, false)
-drawCircle('yellowgreen', 0.25, true)
+// Function to Update Circle Based on Input Values
+function updateChart(income, outcome) {
+  context2D.clearRect(0, 0, canvas.width, canvas.height)
+  let ratio = income / (income + outcome)
+
+  drawCircle('yellowgreen', -ratio, true)
+  drawCircle('red', 1 - ratio, false)
+}
