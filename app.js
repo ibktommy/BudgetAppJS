@@ -59,7 +59,7 @@ allBtn.addEventListener('click', function () {
 
 /**********************************/
 // IMPORTING FUNCTIONS
-import { clearInputs, calculateBalance, calculateTotal } from './miniFunctions.js'
+import { clearInputs, calculateBalance, calculateTotal, showEntry } from './miniFunctions.js'
 
 // Add-Income & Add-Expense Enter Key Event Listener
 document.addEventListener('keypress', function (e) {
@@ -138,19 +138,4 @@ const updateUI = () => {
     }
     showEntry(allList, entry.type, entry.title, entry.amount, index)
   })
-}
-
-// Function to Display the ENTRY_LIST as a list Item in the App
-const showEntry = (list, type, title, amount, id) => {
-  const entry = `
-                  <li id="${id}" class="${type}">
-                    <div class="entry">${title}: $${amount}</div>
-                    <div class"action">
-                      <i class="far fa-edit"></i>
-                      <i class="fas fa-trash"></i>
-                    </div>
-                  </li>
-                `
-  const position = 'afterbegin'
-  list.insertAdjacentHTML(position, entry)
 }
