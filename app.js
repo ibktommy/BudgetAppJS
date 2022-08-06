@@ -80,7 +80,7 @@ function budgetIn(e) {
 
   let income = {
     type: 'income',
-    title: 'incomeTitle.value',
+    title: incomeTitle.value,
     amount: parseFloat(incomeAmount.value)
   }
 
@@ -104,7 +104,7 @@ function budgetOut(e) {
 
   let expense = {
     type: 'expense',
-    title: 'expenseTitle.value',
+    title: expenseTitle.value,
     amount: parseFloat(expenseAmount.value)
   }
 
@@ -129,4 +129,28 @@ const updateUI = () => {
   balanceEl.innerHTML = `<p>${sign}${balance.toLocaleString()}</p>`
   incomeTotalEl.innerHTML = `<p>$${income.toLocaleString()}</p>`
   outcomeTotalEl.innerHTML = `<p>-$${outcome.toLocaleString()}</p>`
+
+  ENTRY_LIST.forEach((entry, index) => {
+    if (entry.type === 'income') {
+      showEntry(incomeList, entry.type, entry.title, entry.amount, index)
+    } else if (entry.type === 'expense') {
+      showEntry(expenseList, entry.type, entry.title, entry.amount, index)
+    }
+    showEntry(allList, entry.type, entry.title, entry.amount, index)
+  })
+}
+
+// Function to Display the ENTRY_LIST as a list Item in the App
+const showEntry = (list, type, title, amount, id) => {
+  const entry = `
+                  <li id="${id}" class="${type}">
+                    <div class="entry">${title}: $${amount}</div>
+                    <div class"action">
+                      <i class="far fa-edit"></i>
+                      <i class="fas fa-trash"></i>
+                    </div>
+                  </li>
+                `
+  const position = 'afterbegin'
+  list.insertAdjacentHTML(position, entry)
 }
