@@ -144,4 +144,7 @@ const updateUI = () => {
   })
 
   updateChart(income, outcome)
+
+  // Save ENTRY_LIST to local Storage
+  localStorage.setItem('EntryList', JSON.stringify(ENTRY_LIST))
 }
