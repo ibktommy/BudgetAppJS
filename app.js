@@ -26,9 +26,13 @@ const expenseTitle = document.querySelector('#expense-title-input')
 const expenseAmount = document.querySelector('#expense-amount-input')
 
 // NECESSARY VARIABLES
-let ENTRY_LIST = []
+let ENTRY_LIST;
 let [balance, income, outcome] = [0, 0, 0]
 let [deleteIcon, editIcon] = ['fas fa-trash', 'far fa-edit']
+
+// Get Entry List Data From localStorage if data exist there or just set it to an Empty Array
+ENTRY_LIST = JSON.parse(localStorage.getItem('EntryList')) || []
+updateUI() //Run Function After getting data from Local Storage
 
 /**********************************/
 
@@ -119,7 +123,7 @@ function budgetOut(e) {
 }
 
 // Function to update the UI
-const updateUI = () => {
+function updateUI() {
   income = calculateTotal('income', ENTRY_LIST)
   outcome = calculateTotal('expense', ENTRY_LIST)
   balance = Math.abs(calculateBalance(income, outcome))
