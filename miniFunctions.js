@@ -58,5 +58,24 @@ function deleteListsItem(id, entryList, UI) {
   UI()
 }
 
-export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList, deleteListsItem }
+// Function To Edit An Item
+function editListItem(id, entryList, incomeAmount, incomeTitle, expenseAmount, expenseTitle) {
+  // console.log(entryList[id].amount)
+  // console.log(entryList[id].title)
+  // console.log(entryList[id].type)
+
+  let targetType = entryList[id].type
+  let targetAmount = entryList[id].amount
+  let targetTitle = entryList[id].title
+
+  if (targetType === 'income') {
+    incomeAmount.value = targetAmount,
+      incomeTitle.value = targetTitle
+  } else if (targetType === 'expense') {
+    expenseAmount.value = targetAmount,
+      expenseTitle.value = targetTitle
+  }
+}
+
+export { show, hide, active, inactive, clearInputs, calculateBalance, calculateTotal, showEntry, clearElementList, deleteListsItem, editListItem }
 
