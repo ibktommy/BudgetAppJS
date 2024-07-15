@@ -1,208 +1,276 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  min-height: 100vh;
-  background-image: linear-gradient(
-      rgba(231, 172, 255, 0.4),
-      rgba(231, 172, 255, 0.4)
-    ),
-    url("bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	min-height: 100vh;
+	background-image: linear-gradient(
+			rgba(53, 53, 53, 0.4),
+			rgba(34, 34, 34, 0.4)
+		),
+		url('./money-bg-min.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 h1 {
-  font-size: 60px;
-  font-weight: 400;
-  margin-bottom: 30px;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
+	font-size: 5rem;
+	font-weight: 400;
+	margin-bottom: 30px;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .budget-container {
-  background-color: rgba(231, 172, 255, 0.4);
-  padding: 20px;
-  height: 900px;
-  width: 1500px;
+	background-color: rgba(231, 172, 255, 0.4);
+	padding: 20px;
+	height: 900px;
+	width: 1500px;
 }
 
 /* Budget Header */
 .budget-header {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .balance {
-  align-self: center;
-  margin-bottom: 30px;
+	align-self: center;
+	margin-bottom: 30px;
 
-  display: flex;
+	display: flex;
 }
 
 .balance .value p {
-  font-size: 60px;
-  font-weight: bold;
-  color: rgb(248, 182, 0);
+	font-size: 60px;
+	font-weight: bold;
+	color: rgb(248, 182, 0);
 }
 
 .balance p,
 .account p {
-  font-size: 20px;
-  display: inline-block;
+	font-size: 20px;
+	display: inline-block;
 }
 
 .account {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-items: center;
 }
 
 .income .title,
 .income p {
-  text-transform: uppercase;
-  font-size: 2rem;
-  color: rgb(18, 102, 177);
+	text-transform: uppercase;
+	font-size: 2rem;
+	color: rgb(5, 61, 110);
 }
 
 .outcome .title,
 .outcome p {
-  text-transform: uppercase;
-  font-size: 2rem;
-  color: crimson;
+	text-transform: uppercase;
+	font-size: 2rem;
+	color: crimson;
 }
 
 /* Budget Dashboard */
 .budget-dashboard {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-around;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-around;
 }
 
 .income,
 .expense,
 #all {
-  width: 30%;
+	width: 30%;
+	/* border: .2rem solid rgb(248, 182, 0); */
 }
 
 h3 {
-  margin-bottom: 15px;
-  font-size: 20px;
-  opacity: 0.6;
-  cursor: pointer;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 7px;
-  text-align: center;
+	margin-bottom: 15px;
+	font-size: 20px;
+	opacity: 0.6;
+	cursor: pointer;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	padding: 7px;
+	text-align: center;
 }
 
 #income-tracker,
 #expense-tracker {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 #income-tracker .input,
 #expense-tracker .input {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 #income-tracker .input div,
 #expense-tracker .input div {
-  display: flex;
+	display: flex;
 }
 
 #income-tracker .input div input:first-child,
 #expense-tracker .input div input:first-child {
-  margin-right: 5px;
+	margin-right: 5px;
 }
 
 #income-tracker input,
 #expense-tracker input {
-  padding: 10px 15px;
-  outline: none;
-  border: none;
-  font-size: 15px;
-  margin-bottom: 5px;
-  width: 50%;
+	padding: 10px 15px;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	margin-bottom: 5px;
+	width: 50%;
 }
 
-input[type="submit"] {
-  width: 100% !important;
-  font-size: 20px !important;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  cursor: pointer;
+input[type='submit'] {
+	width: 100% !important;
+	font-size: 20px !important;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.4);
+	cursor: pointer;
 }
 
 .active {
-  opacity: 1 !important;
+	opacity: 1 !important;
 }
 
 .hide {
-  visibility: hidden;
+	visibility: hidden;
 }
 
 .list {
-  padding: 10px;
-  overflow: auto;
-  height: 250px;
-  background-color: rgba(0, 0, 0, 0.65);
+	padding: 10px;
+	overflow: auto;
+	height: 250px;
+	background-color: rgba(0, 0, 0, 0.65);
 }
 
 #income-tracker .list {
-  color: lawngreen;
+	color: lawngreen;
 }
 
 #expense-tracker .list {
-  color: tomato;
+	color: tomato;
 }
 
 #all .list {
-  background-color: rgba(0, 0, 0, 0.65);
-  height: 330px;
+	background-color: rgba(0, 0, 0, 0.65);
+	height: 330px;
 }
 
 #all .list li.expense {
-  color: tomato;
+	color: tomato;
 }
 
 #all .list li.income {
-  color: lawngreen;
+	color: lawngreen;
 }
 
 #all .list li i.fa-edit {
-  display: none;
+	display: none;
 }
 
 .list li {
-  width: 100%;
-  font-size: 15px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px white solid;
-  margin-bottom: 15px;
-  padding: 5px;
+	width: 100%;
+	font-size: 15px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 2px white solid;
+	margin-bottom: 15px;
+	padding: 5px;
 }
 
 .list li i {
-  cursor: pointer;
-  font-size: 20px;
+	cursor: pointer;
+	font-size: 20px;
 }
 
 .action i:last-child {
-  margin-left: 10px;
+	margin-left: 10px;
 }
+
+@media screen and (max-width: 900px) {
+	.budget-container {
+		height: max-content;
+	}
+
+	.budget-dashboard {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.income,
+	.expense,
+	#all {
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    padding: 2rem;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .balance .value p {
+    font-size: 5rem;
+  }
+
+  .budget-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .budget-header .account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .budget-container {
+    width: 100vw;
+  }
+
+  .budget-dashboard .income,
+  .budget-dashboard .expense,
+  .budget-dashboard #all {
+    width: 100%;
+  }
+}
+
+
